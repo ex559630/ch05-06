@@ -1,5 +1,5 @@
 fun main(){
-    val greetingFunction:(String,Int) -> String ={ playerName , numBuildings ->
+    val greetingFunction ={ playerName:String , numBuildings:Int ->
 
         val currentYear = 2021
         println("Adding $numBuildings houses")
