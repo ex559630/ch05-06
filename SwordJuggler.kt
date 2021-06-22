@@ -13,7 +13,8 @@ fun main(){
     println("You juggle $swordsJuggling swords!")
 }
 fun proficiencyCheck(swordsJuggling: Int?){
-    swordsJuggling ?: throw UnskilledSwordJugglerException()
+
+    checkNotNull(swordsJuggling,{"玩家不會丟劍雜耍"})
 }
 class UnskilledSwordJugglerException():
         IllegalStateException("玩家不會丟劍雜耍")
