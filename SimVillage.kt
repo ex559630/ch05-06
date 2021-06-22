@@ -1,16 +1,19 @@
 fun main(){
-    runSimulation("Guyal",::printConstructionCost) { playerName , numBuildings ->
-        val currentYear = 2021
-        println("Adding $numBuildings houses")
-        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
-    }
+    runSimulation()
 }
-inline fun runSimulation(playerName: String,
-                         costPrinter: (Int) -> Unit,
-                         greetingFunction :(String,Int) -> String) {
-    val numBuildings = (1..3).shuffled().last()
-    costPrinter(numBuildings)
-    println(greetingFunction(playerName,numBuildings))
+fun runSimulation() {
+    val greetingFunction = configureGreetingFunction()
+    println(greetingFunction("Guyak"))
+}
+fun configureGreetingFunction():(String) -> String{
+    val structureType ="hospitals"
+    var numBuilings = 5
+    return { playerName: String->
+        val currentYear =2021
+        numBuilings += 1
+        println ("Adding $numBuilings $structureType")
+        "welcome to SimVillage $playerName!(copying $currentYear)"
+    }
 }
 fun printConstructionCost(numBuilding:Int){
     val cost = 500
