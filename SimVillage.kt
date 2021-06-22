@@ -4,14 +4,15 @@ fun main(){
 fun runSimulation() {
     val greetingFunction = configureGreetingFunction()
     println(greetingFunction("Guyak"))
+    println(greetingFunction("Guyak"))
 }
 fun configureGreetingFunction():(String) -> String{
     val structureType ="hospitals"
-    var numBuilings = 5
+    var numBuildings = 5
     return { playerName: String->
         val currentYear =2021
-        numBuilings += 1
-        println ("Adding $numBuilings $structureType")
+        numBuildings += 1
+        println ("Adding $numBuildings $structureType")
         "welcome to SimVillage $playerName!(copying $currentYear)"
     }
 }
